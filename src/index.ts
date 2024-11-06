@@ -13,7 +13,7 @@ app.get("/", (_, response) => {
 });
 
 app.use("/books", bookrouter);
-app.use('/api/auth', authRoutes);
+app.use('/auth', authRoutes);
 
 const PORT = 4000;
 app.listen(PORT, () => {
