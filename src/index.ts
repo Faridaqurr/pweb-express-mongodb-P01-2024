@@ -12,7 +12,7 @@ app.get("/", (_, response) => {
   response.status(200).send("Server is up and running 💫");
 });
 
-app.use("/books", bookrouter);
+app.use("/book", bookrouter);
 app.use('/auth', authRoutes);
 
 const PORT = 4000;
