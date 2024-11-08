@@ -10,7 +10,22 @@ app.use(express.json());
 connectDB();
 
 app.get("/", (_, response) => {
-  response.status(200).send("Server is up and running 💫");
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  };
+  const formattedDate = new Date().toLocaleDateString('en-US', options);
+
+  response.status(200).send({
+    status: "success",
+    message: "Halo mas asisten yang baik hati",
+    date: formattedDate,
+  });
 });
 
 app.use("/book", bookrouter);
