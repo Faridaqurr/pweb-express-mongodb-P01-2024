@@ -2,6 +2,7 @@ import express from 'express';
 import connectDB from './db-connection';
 import authRoutes from './routes/auth.route';
 import bookrouter from './routes/book.route';
+import mechanismRouter from './routes/mechanism.route';
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get("/", (_, response) => {
 
 app.use("/book", bookrouter);
 app.use('/auth', authRoutes);
+app.use('/mechanism', mechanismRouter);
 
 const PORT = 4000;
 app.listen(PORT, () => {
