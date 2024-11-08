@@ -6,7 +6,7 @@ const borrowBook = async (bookId: string) => {
     throw new Error('Book not found');
   }
 
-  if (book.qty <= 1) {
+  if (book.qty < 1) {
     throw new Error('Book is not available for borrowing');
   }
 

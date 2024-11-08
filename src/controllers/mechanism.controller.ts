@@ -1,11 +1,10 @@
 import { Request, Response } from 'express';
 import mechanismService from '../services/mechanism.service';
 
-// Borrow Book
 export const borrowBook = async (req: Request, res: Response) => {
   try {
-    const bookId = req.params.id; // Gunakan hanya bookId dari parameter
-    const { currentQty } = await mechanismService.borrowBook(bookId); // Tanpa userId
+    const bookId = req.params.id; 
+    const { currentQty } = await mechanismService.borrowBook(bookId); 
 
     res.status(200).json({
       status: 'success',
@@ -22,11 +21,10 @@ export const borrowBook = async (req: Request, res: Response) => {
   }
 };
 
-// Return Book
 export const returnBook = async (req: Request, res: Response) => {
   try {
-    const bookId = req.params.id; // Gunakan hanya bookId dari parameter
-    const { currentQty } = await mechanismService.returnBook(bookId); // Tanpa userId
+    const bookId = req.params.id; 
+    const { currentQty } = await mechanismService.returnBook(bookId); 
 
     res.status(200).json({
       status: 'success',
@@ -41,9 +39,4 @@ export const returnBook = async (req: Request, res: Response) => {
       message: error.message,
     });
   }
-};
-
-// Health Check
-export const healthCheck = (req: Request, res: Response) => {
-  res.status(200).json({ status: 'up' });
 };
