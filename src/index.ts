@@ -22,8 +22,8 @@ app.get("/", (_, response) => {
   const formattedDate = new Date().toLocaleDateString('en-US', options);
 
   response.status(200).send({
-    status: "success",
-    message: "Halo mas asisten yang baik hati",
+    status: "yeayyy success😎",
+    message: "Welcome to API Kelompok P1🥰",
     date: formattedDate,
   });
 });
