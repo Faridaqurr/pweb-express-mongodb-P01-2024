@@ -1,6 +1,4 @@
 import express from 'express';
-import cors from 'cors';
-
 import connectDB from './db-connection';
 import authRoutes from './routes/auth.route';
 import bookrouter from './routes/book.route';
@@ -9,7 +7,6 @@ import mechanismRouter from './routes/mechanism.route';
 const app = express();
 
 app.use(express.json());
-app.use(cors());
 connectDB();
 
 app.get("/", (_, response) => {
@@ -26,7 +23,7 @@ app.get("/", (_, response) => {
 
   response.status(200).send({
     status: "yeayyy success😎",
-    message: "Welcome to API Kelompok P1🥰",
+    message: "Welcome to API kelompok P1😃",
     date: formattedDate,
   });
 });
